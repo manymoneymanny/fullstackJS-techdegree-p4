@@ -11,23 +11,34 @@
     * Display phrase on game board
     */
     addPhraseToDisplay() {
-        // select phrase div
         const phraseDiv = document.getElementById('phrase');
-        // break this.phrase into an array of its characters including letters and spaces
         const characters = this.phrase.split('')
-        // create li element for each character according to example_phrase_html.txt template
         characters.forEach(character => {
-            // if character is letter, use 'letter' class and appropriate letter class
-            // if character is space, use 'space' class
             let li;
             if (character !== ' ') {
                 li = `<li class="hide letter ${character}">${character}</li>`;
             } else {
                 li = `<li class="space"> </li>`;
             }
-            // add/append li elements to board
             phraseDiv.firstElementChild.innerHTML += li;
         });
-        
+    }
+
+    /**
+    * Checks if passed letter is in phrase
+    * @param {string} letter - Letter to check
+    */
+    checkLetter(letter) {
+        return this.phrase.includes(letter);
+    }
+
+    /**
+    * Displays passed letter on screen after a match is found
+    * @param {string} letter - Letter to display
+    */
+    showMatchedLetter(letter) {
+        document.querySelectorAll(`.${letter}`).forEach(
+            matchedLetter => matchedLetter.classList.replace('hide', 'show')
+        );
     }
  }
