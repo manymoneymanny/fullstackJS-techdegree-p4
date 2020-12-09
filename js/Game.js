@@ -15,11 +15,11 @@
     */
     createPhrases() {
         const phrases = [
-            new Phrase("A bird in the hand is worth two in the bush"),
-            new Phrase("A penny saved is a penny earned"),
-            new Phrase("Actions speak louder than words"),
-            new Phrase("Birds of a feather flock together"),
-            new Phrase("It is always darkest before the dawn")
+            new Phrase("Better late than never"),
+            new Phrase("Easy does it"),
+            new Phrase("Hit the sack"),
+            new Phrase("So far so good"),
+            new Phrase("On the ball")
         ];
         return phrases;
     }
@@ -36,7 +36,10 @@
     * Begins game by selecting a random phrase and displaying it to user
     */
     startGame() {
-        document.getElementById('overlay').style.display = 'none'
+        const overlay = document.getElementById('overlay');
+        overlay.classList.remove('win', 'lose');
+        overlay.classList.add('start');
+        overlay.style.display = 'none'
         this.activePhrase = this.getRandomPhrase()
         this.activePhrase.addPhraseToDisplay();
     }
