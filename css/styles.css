@@ -1,12 +1,13 @@
 /* Main styles */
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&Roboto:300');
+  /* changed from Open Sans */
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
 
 /* Variables */
-
+  /* changed color palette for win, lose, start*/
 :root {
-  --color-win: #78CF82;
-  --color-lose: #D94545;
-  --color-start: #5b85b7;
+  --color-win: #B1CBBB;
+  --color-lose: #EEA29A;
+  --color-start: #92a8d1;
   --color-neutral: #445069;
   --color-neutral-light: #D2D2D2;
   --color-keys: #37474F;
@@ -17,10 +18,10 @@
 }
 
 /* main */
-
+  /* changed font family to support Inconsolata */
 * {
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inconsolata', 'Consolas', monospace;
 }
 
 body {
@@ -179,8 +180,9 @@ button {
   color: #FFF;
 }
 
+  /* changed to use color-start from palette */
 .start {
-  background-color: #3a3f58;
+  background-color: var(--color-start);
 }
 
 .start a {
@@ -195,8 +197,9 @@ button {
   color: var(--color-win);
 }
 
+  /* changed to use color-lose from palette */
 .lose {
-  background-color: #f5785f;
+  background-color: var(--color-lose);
 }
 
 .lose a {
